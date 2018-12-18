@@ -39,10 +39,11 @@ public class RNMyFanLibV2Module extends ReactContextBaseJavaModule {
         }
     }
 
-    /**
-     * Returns fingerprint manager or null
-     * @see https://stackoverflow.com/questions/34409969/how-to-check-device-compatibility-for-finger-print-authentication-in-android
-     */
+    @ReactMethod
+    public String getApplicationName() {
+        return "Codemobiles App";
+    }
+
     private FingerprintManager getFingerprintManager() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             return (FingerprintManager) reactContext.getSystemService(reactContext.FINGERPRINT_SERVICE);
